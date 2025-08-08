@@ -1,4 +1,4 @@
-package io.cjybyjk.statuslyricext.misc;
+package io.github.stupidrepo.statuslyricext.misc;
 
 public class Constants {
     public static final String PREFERENCE_KEY_ENABLED = "enabled";

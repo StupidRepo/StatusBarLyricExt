@@ -1,4 +1,4 @@
-package io.cjybyjk.statuslyricext;
+package io.github.stupidrepo.statuslyricext;
 
 import android.content.Context;
 import android.media.MediaMetadata;
@@ -12,13 +12,13 @@ import java.security.NoSuchAlgorithmException;
 
 import cn.zhaiyifan.lyric.LyricUtils;
 import cn.zhaiyifan.lyric.model.Lyric;
-import io.cjybyjk.statuslyricext.provider.ILrcProvider;
-import io.cjybyjk.statuslyricext.provider.KugouProvider;
-import io.cjybyjk.statuslyricext.provider.LRCLibProvider;
-import io.cjybyjk.statuslyricext.provider.LyricsifyProvider;
-import io.cjybyjk.statuslyricext.provider.NeteaseProvider;
-import io.cjybyjk.statuslyricext.provider.QQMusicProvider;
-import io.cjybyjk.statuslyricext.provider.utils.LyricSearchUtil;
+import io.github.stupidrepo.statuslyricext.provider.ILrcProvider;
+import io.github.stupidrepo.statuslyricext.provider.KugouProvider;
+import io.github.stupidrepo.statuslyricext.provider.LRCLibProvider;
+import io.github.stupidrepo.statuslyricext.provider.LyricsifyProvider;
+import io.github.stupidrepo.statuslyricext.provider.NeteaseProvider;
+import io.github.stupidrepo.statuslyricext.provider.QQMusicProvider;
+import io.github.stupidrepo.statuslyricext.provider.utils.LyricSearchUtil;
 
 public class LrcGetter {
 

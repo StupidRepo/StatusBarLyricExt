@@ -1,4 +1,4 @@
-package io.cjybyjk.statuslyricext.provider;
+package io.github.stupidrepo.statuslyricext.provider;
 
 import android.media.MediaMetadata;
 

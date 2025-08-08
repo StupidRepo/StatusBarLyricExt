@@ -1,4 +1,4 @@
-package io.cjybyjk.statuslyricext.provider;
+package io.github.stupidrepo.statuslyricext.provider;
 
 import android.media.MediaMetadata;
 
@@ -13,8 +13,8 @@ import android.util.Base64;
 import android.util.Log;
 import android.util.Pair;
 
-import io.cjybyjk.statuslyricext.provider.utils.HttpRequestUtil;
-import io.cjybyjk.statuslyricext.provider.utils.LyricSearchUtil;
+import io.github.stupidrepo.statuslyricext.provider.utils.HttpRequestUtil;
+import io.github.stupidrepo.statuslyricext.provider.utils.LyricSearchUtil;
 
 public class KugouProvider implements ILrcProvider {
 

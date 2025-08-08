@@ -3,17 +3,14 @@ plugins {
 }
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.2"
-
     defaultConfig {
-        applicationId "io.cjybyjk.statuslyricext"
-        minSdkVersion 21
-        targetSdkVersion 30
+        applicationId "io.github.stupidrepo.statuslyricext"
+        namespace "io.github.stupidrepo.statuslyricext"
+        minSdkVersion 23
+        targetSdkVersion 35
+        compileSdkVersion 35
         versionCode 3
-        versionName "1.1.1"
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        versionName "2.0.0"
     }
 
     buildTypes {
@@ -29,11 +26,10 @@ android {
 }
 
 dependencies {
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'androidx.preference:preference:1.1.1'
-    implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.0.0'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation 'com.google.android.material:material:1.14.0-alpha03'
+    implementation 'androidx.appcompat:appcompat:1.7.1'
+    implementation 'androidx.preference:preference:1.2.1'
+    implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.1.0'
     // jsoup HTML parser library @ https://jsoup.org/
     implementation 'org.jsoup:jsoup:1.17.2'
 }

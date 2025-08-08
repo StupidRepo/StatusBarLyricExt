@@ -1,4 +1,4 @@
-package io.cjybyjk.statuslyricext;
+package io.github.stupidrepo.statuslyricext;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -10,19 +10,18 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
-import android.text.TextUtils;
 import android.util.Log;
 
 import androidx.fragment.app.FragmentActivity;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceFragmentCompat;
-import androidx.preference.SwitchPreference;
+import androidx.preference.SwitchPreferenceCompat;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import io.cjybyjk.statuslyricext.misc.Constants;
+import io.github.stupidrepo.statuslyricext.misc.Constants;
 
 public class SettingsActivity extends FragmentActivity {
 
@@ -56,14 +55,12 @@ public class SettingsActivity extends FragmentActivity {
         if (context == null) return false;
         String pkgName = context.getPackageName();
         final String flat = Settings.Secure.getString(context.getContentResolver(), Constants.SETTINGS_ENABLED_NOTIFICATION_LISTENERS);
-        if (!TextUtils.isEmpty(flat)) {
+        if (flat != null && !flat.isEmpty()) {
             final String[] names = flat.split(":");
             for (String name : names) {
                 final ComponentName cn = ComponentName.unflattenFromString(name);
-                if (cn != null) {
-                    if (TextUtils.equals(pkgName, cn.getPackageName())) {
-                        return true;
-                    }
+                if (cn != null && pkgName.equals(cn.getPackageName())) {
+                    return true;
                 }
             }
         }
@@ -84,19 +81,19 @@ public class SettingsActivity extends FragmentActivity {
 
     public static class SettingsFragment extends PreferenceFragmentCompat implements Preference.OnPreferenceClickListener {
 
-        private SwitchPreference mEnabledPreference;
+        private SwitchPreferenceCompat mEnabledPreference;
 
         @Override
         public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
             setPreferencesFromResource(R.xml.root_preferences, rootKey);
             mEnabledPreference = findPreference(Constants.PREFERENCE_KEY_ENABLED);
             if (mEnabledPreference != null) {
-                mEnabledPreference.setChecked(isNotificationListenerEnabled(getContext()));
+                mEnabledPreference.setChecked(isNotificationListenerEnabled(requireContext()));
                 mEnabledPreference.setOnPreferenceClickListener(this);
             }
             Preference appInfoPreference = findPreference("app");
             if (appInfoPreference != null) {
-                appInfoPreference.setSummary(getAppVersionName(getContext()));
+                appInfoPreference.setSummary(getAppVersionName(requireContext()));
             }
             PreferenceCategory aboutCategory = findPreference(Constants.PREFERENCE_KEY_ABOUT);
             if (aboutCategory != null) {
@@ -111,17 +108,17 @@ public class SettingsActivity extends FragmentActivity {
         public void onResume() {
             super.onResume();
             if (mEnabledPreference != null) {
-                mEnabledPreference.setChecked(isNotificationListenerEnabled(getContext()));
+                mEnabledPreference.setChecked(isNotificationListenerEnabled(requireContext()));
             }
         }
 
         @Override
         public boolean onPreferenceClick(Preference preference) {
             if (preference == mEnabledPreference) {
-                startActivity(new Intent("android.settings.ACTION_NOTIFICATION_LISTENER_SETTINGS"));
+                startActivity(new Intent(Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS));
             } else {
                 String url = mUrlMap.get(preference.getKey());
-                if (TextUtils.isEmpty(url)) return false;
+                if (url == null || url.isEmpty()) return false;
                 Uri uri = Uri.parse(url);
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intent);

@@ -2,10 +2,10 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <PreferenceCategory android:title="@string/preferences_header">
-        <SwitchPreference
+        <SwitchPreferenceCompat
             android:key="enabled"
             android:title="@string/enabled_title" />
-        <io.cjybyjk.statuslyricext.preferences.PackageListPreference
+        <io.github.stupidrepo.statuslyricext.preferences.PackageListPreference
             android:title="@string/ignored_apps_title"
             android:key="ignored_packages"
             android:dependency="enabled" />
@@ -22,7 +22,7 @@
             android:title="LyricView" />
         <Preference
             android:key="forkauthor"
-            android:title="fork by miaaaa0a :3" />
+            android:title="fork by miaaaa0a &amp; stupidrepo ^w^" />
     </PreferenceCategory>
 
 </PreferenceScreen>

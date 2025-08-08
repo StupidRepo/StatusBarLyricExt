@@ -1,4 +1,4 @@
-package io.cjybyjk.statuslyricext;
+package io.github.stupidrepo.statuslyricext;
 
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -32,7 +32,7 @@ import java.util.Objects;
 
 import cn.zhaiyifan.lyric.LyricUtils;
 import cn.zhaiyifan.lyric.model.Lyric;
-import io.cjybyjk.statuslyricext.misc.Constants;
+import io.github.stupidrepo.statuslyricext.misc.Constants;
 
 public class MusicListenerService extends NotificationListenerService {
 
@@ -82,7 +82,7 @@ public class MusicListenerService extends NotificationListenerService {
                 return;
             }
             updateLyric(mMediaController.getPlaybackState().getPosition());
-            mHandler.postDelayed(mLyricUpdateRunnable, 250);
+            mHandler.postDelayed(mLyricUpdateRunnable, 225);
         }
     };
 
@@ -145,14 +145,6 @@ public class MusicListenerService extends NotificationListenerService {
     }
 
     public MusicListenerService() {
-    }
-
-    @Override
-    public void onNotificationPosted(StatusBarNotification sbn) {
-    }
-
-    @Override
-    public void onNotificationRemoved(StatusBarNotification sbn) {
     }
 
     @Override

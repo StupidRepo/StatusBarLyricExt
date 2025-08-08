@@ -1,4 +1,4 @@
-package io.cjybyjk.statuslyricext.provider;
+package io.github.stupidrepo.statuslyricext.provider;
 
 import android.media.MediaMetadata;
 import android.util.Log;
@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.net.URLEncoder;
 import java.util.Locale;
 
-import io.cjybyjk.statuslyricext.provider.utils.HttpRequestUtil;
+import io.github.stupidrepo.statuslyricext.provider.utils.HttpRequestUtil;
 
 public class LRCLibProvider implements ILrcProvider {
 

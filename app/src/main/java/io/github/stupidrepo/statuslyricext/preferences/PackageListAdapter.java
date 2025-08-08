@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package io.cjybyjk.statuslyricext.preferences;
+package io.github.stupidrepo.statuslyricext.preferences;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -40,7 +40,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.TreeSet;
 
-import io.cjybyjk.statuslyricext.R;
+import io.github.stupidrepo.statuslyricext.R;
 
 public class PackageListAdapter extends BaseAdapter implements Runnable {
     private final PackageManager mPm;
