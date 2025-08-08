@@ -21,6 +21,7 @@ import io.github.stupidrepo.statuslyricext.provider.QQMusicProvider;
 import io.github.stupidrepo.statuslyricext.provider.utils.LyricSearchUtil;
 
 public class LrcGetter {
+    private static final String TAG = "LrcGetter";
 
     private static final ILrcProvider[] providers = {
             new KugouProvider(),
@@ -57,7 +58,7 @@ public class LrcGetter {
                     currentResult = lyricResult;
                 }
             } catch (IOException e) {
-                Log.e("ERROR", String.valueOf(e));
+                Log.w(TAG, "Failed to fetch from provider: " + e.getMessage());
             }
         }
         if (currentResult != null && LyricSearchUtil.isLyricContent(currentResult.mLyric)) {
