@@ -18,7 +18,7 @@ import io.github.stupidrepo.statuslyricext.provider.utils.LyricSearchUtil;
 
 public class KugouProvider implements ILrcProvider {
 
-    private static final String KUGOU_BASE_URL = "http://lyrics.kugou.com/";
+    private static final String KUGOU_BASE_URL = "https://lyrics.kugou.com/";
     private static final String KUGOU_SEARCH_URL_FORMAT = KUGOU_BASE_URL + "search?ver=1&man=yes&client=pc&keyword=%s&duration=%d";
     private static final String KUGOU_LRC_URL_FORMAT = KUGOU_BASE_URL + "download?ver=1&client=pc&id=%d&accesskey=%s&fmt=lrc&charset=utf8";
 
